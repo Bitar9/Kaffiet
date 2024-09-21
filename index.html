@@ -41,15 +41,17 @@
                         <li><a href="#section-6" class="white-clr">BLOGG</a></li>
                     </ul>
                 </div>
+                <div class="navbar__toggle" id="navbar-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
             </nav>
         </header>
         <main class="main-section">
             <section class="section-1" id="section-1">
-                <div class="section-1-div  responsive-container">
+                <div class="section-1-div responsive-container">
                     <span class="section-1__span-text">NU KAN DU KÄNNA ENERGIN</span>
                     <h1 class="section-1__main-heading">Starta din dag med <br> en svart kaffe</h1>
                     <button class="section-1__button-white" onclick="location.href='virtual_shop.html'">KÖP NU</button>
-
                 </div>
             </section>
             <section class="section-2 responsive-container" id="section-2">
@@ -115,6 +117,11 @@
 
         // Example: adding a new coffee item
         addCoffeeItem('Espresso', '49', 'Kraftfull, koncentrerad kaffe bryggd genom att trycka hett vatten genom fina malningar.');
+
+        // Navbar toggle for mobile view
+        document.getElementById('navbar-toggle').addEventListener('click', function() {
+            document.querySelector('.navbar__links').classList.toggle('active');
+        });
     </script>
 </body>
 </html>
