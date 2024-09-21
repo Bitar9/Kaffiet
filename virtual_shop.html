@@ -3,60 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtuell Butik</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700" rel="stylesheet" />
+    <title>Virtuell Shop</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your main CSS -->
 </head>
 <body>
-    <div class="main-container">
-        <header class="header-section">
-            <div class="header-section__top-bar">
-                <ul>
-                    <li>Mån-Fre: 08:00 till 14:00</li>
-                    <li>Lör-Sön: 11:00 till 16:00</li>
-                    <li>1234-567-890</li>
-                </ul>
-            </div>
-            <nav>
-                <img class="navbar__logo" src="Coffee-logo.png" alt="Kaffe Logotyp">
-            </nav>
-        </header>
-        <main class="main-section">
-            <h2 class="section-title">Välj dina varor</h2>
-            <p class="text-center">Se våra alternativ och kontrollera om de passar din budget!</p>
-            <div class="product-container">
-                <div class="product-card">
-                    <h3>Cappuccino</h3>
-                    <p>90 kr</p>
-                    <img src="Cappuccino.jpg" alt="Cappuccino">
-                </div>
-                <div class="product-card">
-                    <h3>Americano</h3>
-                    <p>69 kr</p>
-                    <img src="Americano.jpg" alt="Americano">
-                </div>
-                <div class="product-card">
-                    <h3>Espresso</h3>
-                    <p>49 kr</p>
-                    <img src="Espresso.jpg" alt="Espresso">
-                </div>
-                <div class="product-card">
-                    <h3>Macchiato</h3>
-                    <p>87 kr</p>
-                    <img src="Macchiato.jpg" alt="Macchiato">
-                </div>
-                <div class="product-card">
-                    <h3>Mocha</h3>
-                    <p>62 kr</p>
-                    <img src="Mocha.jpg" alt="Mocha">
-                </div>
-                <div class="product-card">
-                    <h3>Coffee Latte</h3>
-                    <p>26 kr</p>
-                    <img src="Coffee_Latte.jpg" alt="Coffee Latte">
+    <header class="header-section">
+        <div class="responsive-container">
+            <h1 class="text-center">Virtuell Shop</h1>
+        </div>
+    </header>
+    
+    <main class="main-container">
+        <section class="section-3" style="background-image: url('background-image.jpg'); background-size: cover;">
+            <div class="responsive-container">
+                <h2 class="text-center">Se Vad Du Kan Köpa</h2>
+                <div class="section-3__card-main-div">
+                    <!-- Example Item Card -->
+                    <div class="section-3__card">
+                        <img src="item-image1.jpg" alt="Item 1" style="width: 100%;">
+                        <div class="section-3__coffee-descp">
+                            <p>Produktnamn 1</p>
+                            <p>Pris: 50 kr</p>
+                        </div>
+                    </div>
+                    <div class="section-3__card">
+                        <img src="item-image2.jpg" alt="Item 2" style="width: 100%;">
+                        <div class="section-3__coffee-descp">
+                            <p>Produktnamn 2</p>
+                            <p>Pris: 75 kr</p>
+                        </div>
+                    </div>
+                    <!-- Add more items as needed -->
                 </div>
             </div>
-        </main>
-    </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="responsive-container">
+            <p>&copy; 2024 Din Cafeteria</p>
+        </div>
+    </footer>
 </body>
 </html>
