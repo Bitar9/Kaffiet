@@ -1,37 +1,28 @@
-let cart = [];
-const cartSidebar = document.getElementById('cart-sidebar');
-const cartItemsElement = document.getElementById('cart-items');
-const cartTotalElement = document.getElementById('cart-total');
+let cartItems = [];
+let cartTotal = 0;
 
 function addToCart(itemName, itemPrice) {
-    cart.push({ name: itemName, price: itemPrice });
+    cartItems.push({ name: itemName, price: itemPrice });
+    cartTotal += itemPrice;
     updateCart();
-    toggleCart(); // Auto-open cart when adding an item
+    toggleCart(); // Open cart when an item is added
 }
 
 function updateCart() {
-    cartItemsElement.innerHTML = '';
-    let total = 0;
-    cart.forEach(item => {
+    const cartItemsList = document.getElementById('cart-items');
+    const cartTotalElement = document.getElementById('cart-total');
+    
+    cartItemsList.innerHTML = ''; // Clear current items
+    cartItems.forEach(item => {
         const listItem = document.createElement('li');
-        listItem.innerHTML = `${item.name} - ${item.price} kr 
-            <button onclick="removeFromCart('${item.name}')">Ta bort</button>`;
-        cartItemsElement.appendChild(listItem);
-        total += item.price;
+        listItem.textContent = `${item.name}: ${item.price} kr`;
+        cartItemsList.appendChild(listItem);
     });
-    cartTotalElement.textContent = `Total: ${total} kr`;
-    document.querySelector('.cart-count').textContent = cart.length;
-}
-
-function removeFromCart(itemName) {
-    cart = cart.filter(item => item.name !== itemName);
-    updateCart();
+    
+    cartTotalElement.textContent = `Total: ${cartTotal} kr`;
 }
 
 function toggleCart() {
+    const cartSidebar = document.getElementById('cart-sidebar');
     cartSidebar.classList.toggle('active');
-}
-
-function scrollToShop() {
-    document.getElementById('shop-items').scrollIntoView({ behavior: 'smooth' });
 }
