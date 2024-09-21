@@ -5,45 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtuell Shop</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to your main CSS -->
+    <link rel="stylesheet" href="virtual-shop.css"> <!-- Additional CSS for the shop -->
 </head>
 <body>
     <header class="header-section">
         <div class="responsive-container">
-            <img src="Coffee-logo.png" alt="Cafeteria Logo" class="navbar__logo-div" style="width: 12.5rem;"> <!-- Navbar Logo -->
-            <h1 class="text-center">Virtuell Shop</h1>
+            <img src="navbar-logo.png" alt="Cafeteria Logo" class="navbar__logo-div">
+            <nav class="navbar">
+                <ul class="navbar__links">
+                    <li><a href="index.html">Hem</a></li>
+                    <li><a href="menu.html">Meny</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="virtual-shop.html">Virtuell Shop</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-    
+
     <main class="main-container">
-        <section class="section-3" style="background-image: url('background-image.jpg'); background-size: cover;">
+        <section class="section-hero" style="background-image: url('hero-background.jpg');">
+            <h1 class="hero-title">Välkommen till vår Virtuella Shop!</h1>
+            <p class="hero-subtitle">Upptäck våra läckra produkter</p>
+        </section>
+
+        <section class="section-products">
             <div class="responsive-container">
                 <h2 class="text-center">Se Vad Du Kan Köpa</h2>
-                <div class="section-3__card-main-div">
+                <div class="product-grid">
                     <!-- Example Item Card -->
-                    <div class="section-3__card">
-                        <img src="item-image1.jpg" alt="Item 1" style="width: 100%;">
-                        <div class="section-3__coffee-descp">
-                            <p>Produktnamn 1</p>
-                            <p>Pris: 50 kr</p>
-                        </div>
+                    <div class="product-card">
+                        <img src="item-image1.jpg" alt="Item 1">
+                        <h3>Produktnamn 1</h3>
+                        <p>Beskrivning av produkten. Lär dig mer om vad som gör denna produkt speciell.</p>
+                        <p class="price">Pris: 50 kr</p>
+                        <button class="btn-buy">Köp Nu</button>
                     </div>
-                    <div class="section-3__card">
-                        <img src="item-image2.jpg" alt="Item 2" style="width: 100%;">
-                        <div class="section-3__coffee-descp">
-                            <p>Produktnamn 2</p>
-                            <p>Pris: 75 kr</p>
-                        </div>
+                    <div class="product-card">
+                        <img src="item-image2.jpg" alt="Item 2">
+                        <h3>Produktnamn 2</h3>
+                        <p>Beskrivning av produkten. Lär dig mer om vad som gör denna produkt speciell.</p>
+                        <p class="price">Pris: 75 kr</p>
+                        <button class="btn-buy">Köp Nu</button>
                     </div>
                     <!-- Add more items as needed -->
                 </div>
             </div>
         </section>
     </main>
-    
+
     <footer class="footer">
         <div class="responsive-container">
             <p>&copy; 2024 Din Cafeteria</p>
-            <img src="footer-banner.png" alt="Footer Banner" style="width: 100%;"> <!-- Footer Image -->
+            <img src="footer-banner.png" alt="Footer Banner">
         </div>
     </footer>
 </body>
