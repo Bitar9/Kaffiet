@@ -6,6 +6,7 @@
     <title>Kafeteria Virtual Shop</title>
     <link rel="stylesheet" href="shop_style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- For cart icon -->
 </head>
 <body>
     <header class="shop-header">
@@ -43,19 +44,22 @@
                 <div class="shop-item">
                     <img src="coffee-1.jpg" alt="Cappuccino">
                     <h3>Cappuccino</h3>
-                    <p>90 kr</p>
+                    <p class="item-description">En klassisk blandning med rik smak.</p>
+                    <p class="item-price">90 kr</p>
                     <button class="add-to-cart-btn" onclick="addToCart('Cappuccino', 90)">Lägg till i varukorgen</button>
                 </div>
                 <div class="shop-item">
                     <img src="coffee-2.jpg" alt="Americano">
                     <h3>Americano</h3>
-                    <p>69 kr</p>
+                    <p class="item-description">En enkel men kraftfull blandning.</p>
+                    <p class="item-price">69 kr</p>
                     <button class="add-to-cart-btn" onclick="addToCart('Americano', 69)">Lägg till i varukorgen</button>
                 </div>
                 <div class="shop-item">
                     <img src="coffee-3.jpg" alt="Espresso">
                     <h3>Espresso</h3>
-                    <p>49 kr</p>
+                    <p class="item-description">Starkt och aromatiskt kaffe.</p>
+                    <p class="item-price">49 kr</p>
                     <button class="add-to-cart-btn" onclick="addToCart('Espresso', 49)">Lägg till i varukorgen</button>
                 </div>
                 <!-- Add more items here -->
