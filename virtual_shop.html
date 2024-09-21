@@ -3,51 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtuell Shop</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to your main CSS -->
-    <link rel="stylesheet" href="virtual-shop.css"> <!-- Additional CSS for the shop -->
+    <title>Virtuell Butik</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="virtual-shop.css">
 </head>
 <body>
     <header class="header-section">
-        <div class="responsive-container">
-            <img src="navbar-logo.png" alt="Cafeteria Logo" class="navbar__logo-div">
-            <nav class="navbar">
-                <ul class="navbar__links">
-                    <li><a href="index.html">Hem</a></li>
-                    <li><a href="menu.html">Meny</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
-                    <li><a href="virtual-shop.html">Virtuell Shop</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="navbar">
+            <div class="navbar__logo">
+                <img src="path/to/logo.png" alt="Cafeteria Logo">
+            </div>
+            <ul class="navbar__links">
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="virtual-shop.html">Virtuell Butik</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="main-container">
-        <section class="section-hero" style="background-image: url('hero-background.jpg');">
-            <h1 class="hero-title">Välkommen till vår Virtuella Shop!</h1>
-            <p class="hero-subtitle">Upptäck våra läckra produkter</p>
+        <section class="section-1">
+            <h1 class="section-1__main-heading">Välkommen till Vår Virtuella Butik</h1>
+            <p class="section-1__span-text">Hitta din favoritmat för rätt pris!</p>
         </section>
 
-        <section class="section-products">
+        <section class="section-3">
             <div class="responsive-container">
-                <h2 class="text-center">Se Vad Du Kan Köpa</h2>
-                <div class="product-grid">
-                    <!-- Example Item Card -->
-                    <div class="product-card">
-                        <img src="item-image1.jpg" alt="Item 1">
-                        <h3>Produktnamn 1</h3>
-                        <p>Beskrivning av produkten. Lär dig mer om vad som gör denna produkt speciell.</p>
-                        <p class="price">Pris: 50 kr</p>
-                        <button class="btn-buy">Köp Nu</button>
+                <div class="section-3__card-main-div">
+                    <div class="section-3__card">
+                        <img src="path/to/item1.jpg" alt="Item 1" class="section-3__card-img">
+                        <h3 class="section-3__coffee-descp">Item 1 - 30 kr</h3>
                     </div>
-                    <div class="product-card">
-                        <img src="item-image2.jpg" alt="Item 2">
-                        <h3>Produktnamn 2</h3>
-                        <p>Beskrivning av produkten. Lär dig mer om vad som gör denna produkt speciell.</p>
-                        <p class="price">Pris: 75 kr</p>
-                        <button class="btn-buy">Köp Nu</button>
+                    <div class="section-3__card">
+                        <img src="path/to/item2.jpg" alt="Item 2" class="section-3__card-img">
+                        <h3 class="section-3__coffee-descp">Item 2 - 45 kr</h3>
                     </div>
-                    <!-- Add more items as needed -->
+                    <div class="section-3__card">
+                        <img src="path/to/item3.jpg" alt="Item 3" class="section-3__card-img">
+                        <h3 class="section-3__coffee-descp">Item 3 - 50 kr</h3>
+                    </div>
                 </div>
             </div>
         </section>
@@ -55,8 +48,7 @@
 
     <footer class="footer">
         <div class="responsive-container">
-            <p>&copy; 2024 Din Cafeteria</p>
-            <img src="footer-banner.png" alt="Footer Banner">
+            <p>&copy; 2024 Cafeteria. Alla rättigheter förbehållna.</p>
         </div>
     </footer>
 </body>
