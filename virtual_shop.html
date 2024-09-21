@@ -3,53 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtuell Butik</title>
-    <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="virtual-shop.css">
+    <title>Kafeteria Shopping Cart</title>
+    <link rel="stylesheet" href="shop_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.css" integrity="sha512-U9Y1sGB3sLIpZm3ePcrKbXVhXlnQNcuwGQJ2WjPjnp6XHqVTdgIlbaDzJXJIAuCTp3y22t+nhI4B88F/5ldjFA==" crossorigin="anonymous" />
 </head>
 <body>
-    <header class="header-section">
-        <nav class="navbar">
-            <div class="navbar__logo">
-                <img src="path/to/logo.png" alt="Cafeteria Logo">
-            </div>
-            <ul class="navbar__links">
-                <li><a href="index.html">Hem</a></li>
-                <li><a href="virtual-shop.html">Virtuell Butik</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="main-container">
+        <header class="header-section">
+            <nav class="header-section__nav responsive-container">
+                <div class="navbar__logo-div">
+                    <img class="navbar__logo" src="Coffee-logo.png" alt="Kaffe Logotyp">
+                </div>
+                <div class="navbar__links-div">
+                    <ul class="navbar__links">
+                        <li><a href="index.html" class="white-clr">HEM</a></li>
+                        <li><a href="#shop-section" class="white-clr">SHOP</a></li>
+                    </ul>
+                </div>
+                <div class="navbar__cart">
+                    <a href="#" class="cart-button" id="cart-button">
+                        <i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">0</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
 
-    <main class="main-container">
-        <section class="section-1">
-            <h1 class="section-1__main-heading">Välkommen till Vår Virtuella Butik</h1>
-            <p class="section-1__span-text">Hitta din favoritmat för rätt pris!</p>
-        </section>
-
-        <section class="section-3">
-            <div class="responsive-container">
-                <div class="section-3__card-main-div">
-                    <div class="section-3__card">
-                        <img src="path/to/item1.jpg" alt="Item 1" class="section-3__card-img">
-                        <h3 class="section-3__coffee-descp">Item 1 - 30 kr</h3>
-                    </div>
-                    <div class="section-3__card">
-                        <img src="path/to/item2.jpg" alt="Item 2" class="section-3__card-img">
-                        <h3 class="section-3__coffee-descp">Item 2 - 45 kr</h3>
-                    </div>
-                    <div class="section-3__card">
-                        <img src="path/to/item3.jpg" alt="Item 3" class="section-3__card-img">
-                        <h3 class="section-3__coffee-descp">Item 3 - 50 kr</h3>
+        <!-- Product Section -->
+        <main class="main-section">
+            <section class="shop-section" id="shop-section">
+                <div class="responsive-container">
+                    <h1 class="shop-title">Välkommen till vår kaffebutik</h1>
+                    <p class="shop-description">Utforska och lägg till dina favoritkaffeprodukter i kundvagnen.</p>
+                    
+                    <div class="product-grid" id="product-grid">
+                        <!-- Coffee items will be dynamically added here -->
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
 
-    <footer class="footer">
-        <div class="responsive-container">
-            <p>&copy; 2024 Cafeteria. Alla rättigheter förbehållna.</p>
-        </div>
-    </footer>
+            <!-- Shopping Cart Section -->
+            <section class="cart-section" id="cart-section">
+                <div class="responsive-container">
+                    <h2>Din kundvagn</h2>
+                    <div id="cart-items"></div>
+                    <div class="cart-total">
+                        <h3>Total: <span id="total-price">0</span> kr</h3>
+                        <button class="checkout-btn">Gå till betalning</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer common-padding">
+            <div class="responsive-container">
+                <div class="footer__about-div">
+                    <h4>Om Oss</h4>
+                    <p>Utforska våra passionerade kaffeblandningar och njut av resan med varje rik, smakfull kopp.</p>
+                    <p class="footer_copyright-text">Copyright ©2024 <span>Techie Andrew</span> | Alla rättigheter förbehållna</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="cart.js"></script>
 </body>
 </html>
