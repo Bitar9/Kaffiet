@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kafeteria Webbplats</title>
     <link rel="stylesheet" href="style.css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
         rel="stylesheet" />
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.css'
         integrity='sha512-U9Y1sGB3sLIpZm3ePcrKbXVhXlnQNcuwGQJ2WjPjnp6XHqVTdgIlbaDzJXJIAuCTp3y22t+nhI4B88F/5ldjFA=='
         crossorigin='anonymous' />
 </head>
+
 <body>
     <div class="main-container">
         <header class="header-section">
@@ -32,6 +33,9 @@
                 <div class="navbar__logo-div">
                     <img class="navbar__logo" src="Coffee-logo.png" alt="Kaffe Logotyp">
                 </div>
+                <div class="navbar__toggle" id="navbar-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
                 <div class="navbar__links-div">
                     <ul class="navbar__links">
                         <li><a href="#section-1" class="white-clr">HEM</a></li>
@@ -41,11 +45,9 @@
                         <li><a href="#section-6" class="white-clr">BLOGG</a></li>
                     </ul>
                 </div>
-                <div class="navbar__toggle" id="navbar-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
             </nav>
         </header>
+
         <main class="main-section">
             <section class="section-1" id="section-1">
                 <div class="section-1-div  responsive-container">
@@ -90,6 +92,7 @@
                 </div>
             </section>
         </main>
+
         <footer class="footer common-padding">
             <div class="responsive-container">
                 <div class="footer__about-div">
@@ -103,8 +106,9 @@
 
     <script>
         // Toggle navbar visibility on mobile
-        document.getElementById('navbar-toggle').addEventListener('click', function() {
-            document.querySelector('.navbar__links').classList.toggle('active');
+        document.getElementById('navbar-toggle').addEventListener('click', function () {
+            const navbarLinks = document.querySelector('.navbar__links');
+            navbarLinks.classList.toggle('active');
         });
 
         // Simple function to add more coffee items dynamically
@@ -124,4 +128,5 @@
         addCoffeeItem('Espresso', '49', 'Kraftfull, koncentrerad kaffe bryggd genom att trycka hett vatten genom fina malningar.');
     </script>
 </body>
+
 </html>
