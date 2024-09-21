@@ -80,3 +80,29 @@
 .btn-buy:hover {
     background-color: var(--star-yellow);
 }
+
+.section-1 {
+    padding: 10rem 0;
+    background-image: url('path/to/hero-image.jpg'); /* Use an existing image */
+    background-size: cover;
+    color: var(--pure-white);
+}
+
+.section-3__card {
+    background: rgba(255, 255, 255, 0.9); /* Light background for cards */
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 2rem;
+    transition: transform 0.3s;
+}
+
+.section-3__card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.section-3__card-img {
+    width: 100%; /* Responsive images */
+    height: auto;
+    border-radius: 1rem;
+}
