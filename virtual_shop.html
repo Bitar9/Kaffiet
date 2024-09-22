@@ -3,82 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kafeteria Virtual Shop</title>
-    <link rel="stylesheet" href="shop_style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Kafeteria Shop</title>
+    <link rel="stylesheet" href="shop.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="shop-header">
-        <div class="navbar">
-            <div class="navbar__logo-div">
-                <img class="navbar__logo" src="Coffee-logo.png" alt="Kaffe Logotyp">
-            </div>
-            <div class="navbar__links-div">
-                <ul class="navbar__links">
-                    <li><a href="index.html">HEM</a></li>
-                    <li><a href="#shop-items">BUTIK</a></li>
-                    <li><a href="blog.html">BLOGG</a></li>
-                    <li><a href="#contact">KONTAKT</a></li>
-                </ul>
-            </div>
-            <div class="cart-icon" onclick="toggleCart()">
-                <i class="fas fa-shopping-cart"></i><span class="cart-count">0</span>
-            </div>
-        </div>
-    </header>
+    <div class="shop-container">
+        <header class="shop-header">
+            <h1>Välkommen till Vår Virtuella Kafeteria</h1>
+            <p>Utforska våra bästa erbjudanden</p>
+        </header>
 
-    <main class="shop-main">
-        <section class="shop-hero">
-            <div class="hero-content">
-                <h1>Välkommen till vår Kafeteria Butik</h1>
-                <p>Upptäck våra utsökta kaffeblandningar och beställ med ett klick!</p>
-                <button class="shop-button" onclick="scrollToShop()">Shoppa Nu</button>
+        <section class="shop-products">
+            <div class="product-card">
+                <img src="images/cappuccino.jpg" alt="Cappuccino">
+                <div class="product-info">
+                    <h2>Cappuccino</h2>
+                    <p>Krämig espresso toppad med skummad mjölk</p>
+                    <span class="price">90 kr</span>
+                    <button class="add-to-cart" onclick="addToCart('Cappuccino', 90)">Lägg till i kundvagn</button>
+                </div>
             </div>
+            <div class="product-card">
+                <img src="images/americano.jpg" alt="Americano">
+                <div class="product-info">
+                    <h2>Americano</h2>
+                    <p>Stark espresso utspädd med hett vatten</p>
+                    <span class="price">69 kr</span>
+                    <button class="add-to-cart" onclick="addToCart('Americano', 69)">Lägg till i kundvagn</button>
+                </div>
+            </div>
+            <!-- Add more product cards -->
         </section>
 
-        <section class="shop-items" id="shop-items">
-            <h2>Våra Produkter</h2>
-            <div class="items-grid">
-                <!-- Coffee Items -->
-                <div class="shop-item">
-                    <img src="coffee-1.jpg" alt="Cappuccino">
-                    <h3>Cappuccino</h3>
-                    <p class="item-description">En klassisk blandning med rik smak.</p>
-                    <p class="item-price">90 kr</p>
-                    <button class="add-to-cart-btn" onclick="addToCart('Cappuccino', 90)">Lägg till i varukorgen</button>
-                </div>
-                <div class="shop-item">
-                    <img src="coffee-2.jpg" alt="Americano">
-                    <h3>Americano</h3>
-                    <p class="item-description">En enkel men kraftfull blandning.</p>
-                    <p class="item-price">69 kr</p>
-                    <button class="add-to-cart-btn" onclick="addToCart('Americano', 69)">Lägg till i varukorgen</button>
-                </div>
-                <div class="shop-item">
-                    <img src="coffee-3.jpg" alt="Espresso">
-                    <h3>Espresso</h3>
-                    <p class="item-description">Starkt och aromatiskt kaffe.</p>
-                    <p class="item-price">49 kr</p>
-                    <button class="add-to-cart-btn" onclick="addToCart('Espresso', 49)">Lägg till i varukorgen</button>
-                </div>
-                <!-- Add more items here -->
+        <aside class="shopping-cart">
+            <h2>Kundvagn</h2>
+            <ul id="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </ul>
+            <div class="cart-total">
+                <span>Totalt:</span>
+                <span id="total-price">0 kr</span>
             </div>
+            <button class="checkout-btn">Se Totalt</button>
+        </aside>
+
+        <section class="shop-offers">
+            <h2>Speciella Erbjudanden</h2>
+            <div class="offer-card">
+                <p><strong>Rekommenderat:</strong> Lägg till en Croissant för 30 kr!</p>
+                <button class="add-offer" onclick="addToCart('Croissant', 30)">Lägg till</button>
+            </div>
+            <!-- More offers can be added -->
         </section>
-    </main>
 
-    <aside class="cart-sidebar" id="cart-sidebar">
-        <h2>Din Varukorg</h2>
-        <ul id="cart-items"></ul>
-        <p id="cart-total">Total: 0 kr</p>
-        <button class="view-selection-btn">Visa Mina Val</button>
-        <button class="close-cart-btn" onclick="toggleCart()">Stäng</button>
-    </aside>
+        <footer class="shop-footer">
+            <p>Copyright © 2024 Techie Andrew. Alla rättigheter förbehållna.</p>
+        </footer>
+    </div>
 
-    <footer id="contact">
-        <p>Kontakt oss på: 1234-567-890 | E-mail: info@kaffeteria.com</p>
-    </footer>
-
-    <script src="shop_script.js"></script>
+    <script src="shop.js"></script>
 </body>
 </html>
