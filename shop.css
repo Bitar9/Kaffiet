@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.shop-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.shop-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.shop-header h1 {
+    font-size: 3rem;
+    color: #d2691e;
+}
+
+.shop-products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-info h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.price {
+    font-weight: bold;
+    color: #d2691e;
+    margin-bottom: 10px;
+}
+
+.add-to-cart {
+    background-color: #d2691e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #b25918;
+}
+
+.shopping-cart {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.shopping-cart h2 {
+    font-size: 1.8rem;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.checkout-btn {
+    background-color: #d2691e;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.offer-card {
+    background-color: #ffe4b5;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.offer-card p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.add-offer {
+    background-color: #d2691e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.shop-footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.shop-footer p {
+    color: #666;
+}
