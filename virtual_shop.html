@@ -8,10 +8,25 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Välkommen till Kafeterian</h1>
+            <p>Upptäck våra favoriter och säsongens nyheter!</p>
+            <button class="cta-button" onclick="scrollToShop()">Utforska Menyn</button>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html" class="home-button">Hem</a>
+    </nav>
+
     <div class="shop-container">
         <header class="shop-header">
-            <h1>Välkommen till Kafeterian</h1>
-            <p>Utforska vårt urval av utsökta produkter</p>
+            <h2>Utforska vårt utbud</h2>
+            <p>Välj bland ett brett sortiment av kaffe, bakverk och snacks</p>
             <input type="text" id="search-bar" placeholder="Sök efter din favoritdryck...">
         </header>
 
@@ -30,18 +45,11 @@
                 <div class="product-info">
                     <h2>Cappuccino</h2>
                     <p>Krämig espresso toppad med skummad mjölk</p>
-                    <button class="view-details" onclick="showDetails('Cappuccino', '90 kr', 'Krämig espresso toppad med skummad mjölk', '/images/cappuccino.jpg')">Visa detaljer</button>
+                    <span class="badge best-seller">Best Seller</span>
+                    <button class="view-details" onclick="showDetails('Cappuccino', '90 kr', 'Krämig espresso toppad med skummad mjölk', 'images/cappuccino.jpg')">Visa detaljer</button>
                 </div>
             </div>
-            <div class="product-card" data-category="coffee">
-                <img src="images/americano.jpg" alt="Americano">
-                <div class="product-info">
-                    <h2>Americano</h2>
-                    <p>Stark espresso utspädd med hett vatten</p>
-                    <button class="view-details" onclick="showDetails('Americano', '69 kr', 'Stark espresso utspädd med hett vatten', '/images/americano.jpg')">Visa detaljer</button>
-                </div>
-            </div>
-            <!-- Add more product cards -->
+            <!-- More product cards -->
         </section>
 
         <!-- Modal for Product Details -->
