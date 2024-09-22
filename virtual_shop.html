@@ -3,65 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kafeteria Shop</title>
-    <link rel="stylesheet" href="shop.css">
+    <title>Kafeteria Menu</title>
+    <link rel="stylesheet" href="enhanced_shop.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="shop-container">
         <header class="shop-header">
-            <h1>Välkommen till Vår Virtuella Kafeteria</h1>
-            <p>Utforska våra bästa erbjudanden</p>
+            <h1>Välkommen till Kafeterian</h1>
+            <p>Utforska vårt urval av utsökta produkter</p>
+            <input type="text" id="search-bar" placeholder="Sök efter din favoritdryck...">
         </header>
 
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <button class="filter-btn" onclick="filterItems('all')">Alla</button>
+            <button class="filter-btn" onclick="filterItems('coffee')">Kaffe</button>
+            <button class="filter-btn" onclick="filterItems('pastry')">Bakverk</button>
+            <button class="filter-btn" onclick="filterItems('snacks')">Snacks</button>
+        </section>
+
+        <!-- Product Showcase -->
         <section class="shop-products">
-            <div class="product-card">
+            <div class="product-card" data-category="coffee">
                 <img src="images/cappuccino.jpg" alt="Cappuccino">
                 <div class="product-info">
                     <h2>Cappuccino</h2>
                     <p>Krämig espresso toppad med skummad mjölk</p>
-                    <span class="price">90 kr</span>
-                    <button class="add-to-cart" onclick="addToCart('Cappuccino', 90)">Lägg till i kundvagn</button>
+                    <button class="view-details" onclick="showDetails('Cappuccino', '90 kr', 'Krämig espresso toppad med skummad mjölk', 'images/cappuccino.jpg')">Visa detaljer</button>
                 </div>
             </div>
-            <div class="product-card">
+            <div class="product-card" data-category="coffee">
                 <img src="images/americano.jpg" alt="Americano">
                 <div class="product-info">
                     <h2>Americano</h2>
                     <p>Stark espresso utspädd med hett vatten</p>
-                    <span class="price">69 kr</span>
-                    <button class="add-to-cart" onclick="addToCart('Americano', 69)">Lägg till i kundvagn</button>
+                    <button class="view-details" onclick="showDetails('Americano', '69 kr', 'Stark espresso utspädd med hett vatten', 'images/americano.jpg')">Visa detaljer</button>
                 </div>
             </div>
             <!-- Add more product cards -->
         </section>
 
-        <aside class="shopping-cart">
-            <h2>Kundvagn</h2>
-            <ul id="cart-items">
-                <!-- Cart items will be dynamically added here -->
-            </ul>
-            <div class="cart-total">
-                <span>Totalt:</span>
-                <span id="total-price">0 kr</span>
+        <!-- Modal for Product Details -->
+        <div id="product-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+                <img id="modal-img" src="" alt="Produktbild">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+                <span id="modal-price"></span>
             </div>
-            <button class="checkout-btn">Se Totalt</button>
-        </aside>
+        </div>
 
-        <section class="shop-offers">
-            <h2>Speciella Erbjudanden</h2>
-            <div class="offer-card">
-                <p><strong>Rekommenderat:</strong> Lägg till en Croissant för 30 kr!</p>
-                <button class="add-offer" onclick="addToCart('Croissant', 30)">Lägg till</button>
-            </div>
-            <!-- More offers can be added -->
-        </section>
-
+        <!-- Footer Section -->
         <footer class="shop-footer">
             <p>Copyright © 2024 Techie Andrew. Alla rättigheter förbehållna.</p>
         </footer>
     </div>
 
-    <script src="shop.js"></script>
+    <script src="enhanced_shop.js"></script>
 </body>
 </html>
