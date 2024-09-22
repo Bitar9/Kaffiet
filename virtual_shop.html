@@ -3,72 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kafeteria Menu</title>
-    <link rel="stylesheet" href="enhanced_shop.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700&display=swap" rel="stylesheet">
+    <title>Kafeteria Virtuell Butik</title>
+    <link rel="stylesheet" href="virtual_shop.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-
-    <!-- Hero Section -->
-    <div class="hero-section">
-        <div class="hero-content">
-            <h1>Välkommen till Kafeterian</h1>
-            <p>Upptäck våra favoriter och säsongens nyheter!</p>
-            <button class="cta-button" onclick="scrollToShop()">Utforska Menyn</button>
+    <header class="shop-header">
+        <nav class="nav-bar">
+            <div class="nav-container">
+                <img src="Coffee-logo.png" alt="Kaffe Logotyp" class="nav-logo">
+                <ul class="nav-links">
+                    <li><a href="index.html">HEM</a></li>
+                    <li><a href="#shop-section">KAFETERIA MENY</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero-section">
+            <h1>Utforska Vår Meny</h1>
+            <p>Upptäck våra fantastiska erbjudanden på kaffe, smörgåsar och drycker!</p>
         </div>
-    </div>
+    </header>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="index.html" class="home-button">Hem</a>
-    </nav>
-
-    <div class="shop-container">
-        <header class="shop-header">
-            <h2>Utforska vårt utbud</h2>
-            <p>Välj bland ett brett sortiment av kaffe, bakverk och snacks</p>
-            <input type="text" id="search-bar" placeholder="Sök efter din favoritdryck...">
-        </header>
-
-        <!-- Filter Section -->
-        <section class="filter-section">
-            <button class="filter-btn" onclick="filterItems('all')">Alla</button>
-            <button class="filter-btn" onclick="filterItems('coffee')">Kaffe</button>
-            <button class="filter-btn" onclick="filterItems('pastry')">Bakverk</button>
-            <button class="filter-btn" onclick="filterItems('snacks')">Snacks</button>
-        </section>
-
-        <!-- Product Showcase -->
-        <section class="shop-products">
-            <div class="product-card" data-category="coffee">
-                <img src="Cappuccino.png" alt="Cappuccino">
-                <div class="product-info">
-                    <h2>Cappuccino</h2>
-                    <p>Krämig espresso toppad med skummad mjölk</p>
-                    <span class="badge best-seller">Best Seller</span>
-                    <button class="view-details" onclick="showDetails('Cappuccino', '90 kr', 'Krämig espresso toppad med skummad mjölk', 'Cappuccino.png')">Visa detaljer</button>
+    <main id="shop-section">
+        <section class="menu-section">
+            <h2 class="section-title">Våra Produkter</h2>
+            <div class="product-grid">
+                <!-- Coffee Item -->
+                <div class="product-card">
+                    <img src="cappuccino.jpg" alt="Cappuccino" class="product-image">
+                    <div class="product-info">
+                        <h3>Cappuccino</h3>
+                        <p class="price">90 kr</p>
+                        <p class="product-description">Krämig espresso toppad med skummad mjölk.</p>
+                    </div>
+                </div>
+                <!-- Sandwich Item -->
+                <div class="product-card">
+                    <img src="sandwich.jpg" alt="Sandwich" class="product-image">
+                    <div class="product-info">
+                        <h3>Smörgås</h3>
+                        <p class="price">75 kr</p>
+                        <p class="product-description">Fräsch smörgås med färska ingredienser.</p>
+                    </div>
+                </div>
+                <!-- Pepsi Item -->
+                <div class="product-card">
+                    <img src="pepsi.jpg" alt="Pepsi" class="product-image">
+                    <div class="product-info">
+                        <h3>Pepsi</h3>
+                        <p class="price">25 kr</p>
+                        <p class="product-description">Uppfriskande Pepsi, kall och redo att njutas.</p>
+                    </div>
+                </div>
+                <!-- Capri Sun Item -->
+                <div class="product-card">
+                    <img src="capri_sun.jpg" alt="Capri Sun" class="product-image">
+                    <div class="product-info">
+                        <h3>Capri Sun</h3>
+                        <p class="price">20 kr</p>
+                        <p class="product-description">En lätt och smakfull dryck för alla åldrar.</p>
+                    </div>
                 </div>
             </div>
-            <!-- More product cards -->
         </section>
+    </main>
 
-        <!-- Modal for Product Details -->
-        <div id="product-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-modal" onclick="closeModal()">&times;</span>
-                <img id="modal-img" src="" alt="Produktbild">
-                <h2 id="modal-title"></h2>
-                <p id="modal-description"></p>
-                <span id="modal-price"></span>
-            </div>
+    <footer class="shop-footer">
+        <div class="footer-container">
+            <p>Copyright ©2024 Techie Andrew | Alla rättigheter förbehållna</p>
         </div>
+    </footer>
 
-        <!-- Footer Section -->
-        <footer class="shop-footer">
-            <p>Copyright © 2024 Techie Andrew. Alla rättigheter förbehållna.</p>
-        </footer>
-    </div>
-
-    <script src="enhanced_shop.js"></script>
+    <script src="virtual_shop.js"></script>
 </body>
 </html>
