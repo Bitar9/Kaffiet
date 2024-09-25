@@ -1,67 +1,130 @@
-<!DOCTYPE html>
-<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Shop - Kafeteria</title>
-    <link rel="stylesheet" href="shop-style.css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
-        rel="stylesheet" />
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.css'
-        integrity='sha512-U9Y1sGB3sLIpZm3ePcrKbXVhXlnQNcuwGQJ2WjPjnp6XHqVTdgIlbaDzJXJIAuCTp3y22t+nhI4B88F/5ldjFA=='
-        crossorigin='anonymous' />
+    <title>Kafeteria Shopping Cart</title>
+    <link rel="stylesheet" href="virtual-shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.css" integrity="sha512-U9Y1sGB3sLIpZm3ePcrKbXVhXlnQNcuwGQJ2WjPjnp6XHqVTdgIlbaDzJXJIAuCTp3y22t+nhI4B88F/5ldjFA==" crossorigin="anonymous" />
+    <title>Kafeteria Virtual Shop</title>
+    <link rel="stylesheet" href="shop_style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
 </head>
 <body>
-    <header>
-        <div class="shop-header">
-            <h1>Kafeteria Virtuell Butik</h1>
-            <button class="home-button" onclick="location.href='index.html'">Hem</button>
+    <div class="main-container">
+        <header class="header-section">
+            <nav class="header-section__nav responsive-container">
+                <div class="navbar__logo-div">
+                    <img class="navbar__logo" src="Coffee-logo.png" alt="Kaffe Logotyp">
+                </div>
+                <div class="navbar__links-div">
+                    <ul class="navbar__links">
+                        <li><a href="index.html" class="white-clr">HEM</a></li>
+                        <li><a href="#shop-section" class="white-clr">SHOP</a></li>
+                    </ul>
+                </div>
+                <div class="navbar__cart">
+                    <a href="#" class="cart-button" id="cart-button">
+                        <i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">0</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+    <header class="shop-header">
+        <div class="navbar">
+            <div class="navbar__logo-div">
+                <img class="navbar__logo" src="Coffee-logo.png" alt="Kaffe Logotyp">
+            </div>
+            <div class="navbar__links-div">
+                <ul class="navbar__links">
+                    <li><a href="index.html">HEM</a></li>
+                    <li><a href="#shop-items">BUTIK</a></li>
+                    <li><a href="blog.html">BLOGG</a></li>
+                    <li><a href="#contact">KONTAKT</a></li>
+                </ul>
+            </div>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i><span class="cart-count">0</span>
+            </div>
         </div>
     </header>
 
-    <main>
-        <section class="shop-intro">
-            <h2>Våra Erbjudanden</h2>
-            <p>Utforska vårt breda utbud av kaffe, smörgåsar, drycker och mer!</p>
+        <!-- Product Section -->
+        <main class="main-section">
+            <section class="shop-section" id="shop-section">
+                <div class="responsive-container">
+                    <h1 class="shop-title">Välkommen till vår kaffebutik</h1>
+                    <p class="shop-description">Utforska och lägg till dina favoritkaffeprodukter i kundvagnen.</p>
+                    
+                    <div class="product-grid" id="product-grid">
+                        <!-- Coffee items will be dynamically added here -->
+                    </div>
+                </div>
+            </section>
+    <main class="shop-main">
+        <section class="shop-hero">
+            <div class="hero-content">
+                <h1>Välkommen till vår Kafeteria Butik</h1>
+                <p>Upptäck våra utsökta kaffeblandningar och beställ med ett klick!</p>
+                <button class="shop-button" onclick="scrollToShop()">Shoppa Nu</button>
+            </div>
         </section>
 
-        <section class="shop-items">
-            <!-- Dynamic Item List -->
-            <div class="shop-item">
-                <img src="images/Cappuccino.png" alt="Cappuccino">
-                <h3>Cappuccino</h3>
-                <p>Krämig espresso toppad med skummad mjölk. <span>Pris: 90kr</span></p>
+            <!-- Shopping Cart Section -->
+            <section class="cart-section" id="cart-section">
+                <div class="responsive-container">
+                    <h2>Din kundvagn</h2>
+                    <div id="cart-items"></div>
+                    <div class="cart-total">
+                        <h3>Total: <span id="total-price">0</span> kr</h3>
+                        <button class="checkout-btn">Gå till betalning</button>
+                    </div>
+        <section class="shop-items" id="shop-items">
+            <h2>Våra Produkter</h2>
+            <div class="items-grid">
+                <!-- Coffee Items -->
+                <div class="shop-item">
+                    <img src="coffee-1.jpg" alt="Cappuccino">
+                    <h3>Cappuccino</h3>
+                    <p>90 kr</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Cappuccino', 90)">Lägg till i varukorgen</button>
+                </div>
+            </section>
+        </main>
+        <footer class="footer common-padding">
+            <div class="responsive-container">
+                <div class="footer__about-div">
+                    <h4>Om Oss</h4>
+                    <p>Utforska våra passionerade kaffeblandningar och njut av resan med varje rik, smakfull kopp.</p>
+                    <p class="footer_copyright-text">Copyright ©2024 <span>Techie Andrew</span> | Alla rättigheter förbehållna</p>
+                <div class="shop-item">
+                    <img src="coffee-2.jpg" alt="Americano">
+                    <h3>Americano</h3>
+                    <p>69 kr</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Americano', 69)">Lägg till i varukorgen</button>
+                </div>
+                <div class="shop-item">
+                    <img src="coffee-3.jpg" alt="Espresso">
+                    <h3>Espresso</h3>
+                    <p>49 kr</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Espresso', 49)">Lägg till i varukorgen</button>
+                </div>
+                <!-- Add more items here -->
             </div>
-
-            <div class="shop-item">
-                <img src="images/Americano.png" alt="Americano">
-                <h3>Americano</h3>
-                <p>Stark espresso utspädd med vatten. <span>Pris: 69kr</span></p>
-            </div>
-
-            <div class="shop-item">
-                <img src="images/sandwich.png" alt="Sandwich">
-                <h3>Sandwich</h3>
-                <p>Färskt bröd med valfria pålägg. <span>Pris: 55kr</span></p>
-            </div>
-
-            <div class="shop-item">
-                <img src="images/pepsi.png" alt="Pepsi">
-                <h3>Pepsi</h3>
-                <p>En klassisk cola-dryck. <span>Pris: 20kr</span></p>
-            </div>
-
-            <div class="shop-item">
-                <img src="images/capri_sun.png" alt="Capri Sun">
-                <h3>Capri Sun</h3>
-                <p>Fruktig och uppfriskande dryck. <span>Pris: 15kr</span></p>
-            </div>
+        </footer>
+    </div>
         </section>
     </main>
-
-    <footer>
-        <p>Designad av M-kamel Albitar</p>
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <h2>Din Varukorg</h2>
+        <ul id="cart-items"></ul>
+        <p id="cart-total">Total: 0 kr</p>
+        <button class="checkout-btn">Till Kassan</button>
+        <button class="close-cart-btn" onclick="toggleCart()">Stäng</button>
+    </aside>
+    <footer id="contact">
+        <p>Kontakt oss på: 1234-567-890 | E-mail: info@kaffeteria.com</p>
     </footer>
+
+    <script src="cart.js"></script>
+    <script src="shop_script.js"></script>
 </body>
 </html>
