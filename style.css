@@ -112,21 +112,6 @@ p{
     transition: all 0.5s;
 }
 
-button.see-more-button {
-    background-color: #ff5733; /* Change to a color that fits your theme */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-button.see-more-button:hover {
-    background-color: #c0392b; /* Darker shade for hover effect */
-}
-
 
 .top-bar-img{
     position: absolute;
