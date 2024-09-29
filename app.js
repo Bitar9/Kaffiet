@@ -1,55 +1,60 @@
 let cart = [];
 
 const products = [
-    { name: "Espresso", price: 35, image: "espresso.jpg" },
-    { name: "Cappuccino", price: 40, image: "cappuccino.jpg" },
-    { name: "Latte", price: 45, image: "latte.jpg" },
-    { name: "Croissant", price: 25, image: "croissant.jpg" }
+    { name: "Americano", price: 35, image: "/images/Americano.png" },
+    { name: "Cappuccino", price: 40, image: "/images/Cappuccino.png" },
+    { name: "Capri Sun", price: 20, image: "/images/capri_sun.png" },
+    { name: "Pepsi", price: 15, image: "/images/pepsi.png" },
+    { name: "Sandwich", price: 50, image: "/images/sandwich.png" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-    loadProducts();
-    document.getElementById('cart-toggle').addEventListener('click', toggleCart);
+    renderProducts();
 });
 
-function loadProducts() {
-    const productGrid = document.getElementById('product-grid');
+function renderProducts() {
+    const grid = document.getElementById("product-grid");
     products.forEach(product => {
-        const productCard = `
-            <div class="product-card">
-                <img src="${product.image}" alt="${product.name}">
-                <div class="product-info">
-                    <h3>${product.name}</h3>
-                    <p class="price">${product.price} kr</p>
-                    <button class="add-to-cart-btn" onclick="addToCart('${product.name}', ${product.price})">Lägg till i varukorg</button>
-                </div>
+        const card = document.createElement("div");
+        card.classList.add("product-card");
+        card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <div class="product-info">
+                <h3>${product.name}</h3>
+                <p>Price: ${product.price} kr</p>
+                <button class="add-to-cart-btn" onclick="addToCart('${product.name}')">Add to Cart</button>
             </div>
         `;
-        productGrid.innerHTML += productCard;
+        grid.appendChild(card);
     });
 }
 
-function addToCart(name, price) {
-    cart.push({ name, price });
+function addToCart(productName) {
+    const product = products.find(p => p.name === productName);
+    cart.push(product);
     updateCart();
-}
-
-function updateCart() {
-    const cartItems = document.getElementById('cart-items');
-    cartItems.innerHTML = '';
-    cart.forEach(item => {
-        cartItems.innerHTML += `<li>${item.name} - ${item.price} kr</li>`;
-    });
-    document.getElementById('cart-total').innerText = cart.reduce((total, item) => total + item.price, 0);
-    document.getElementById('cart-count').innerText = cart.length;
     toggleCart();
 }
 
+function updateCart() {
+    const cartItems = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+    cartItems.innerHTML = "";
+    let total = 0;
+    cart.forEach(item => {
+        total += item.price;
+        const li = document.createElement("li");
+        li.textContent = `${item.name} - ${item.price} kr`;
+        cartItems.appendChild(li);
+    });
+    cartTotal.textContent = total;
+}
+
 function toggleCart() {
-    const cartSidebar = document.getElementById('cart-sidebar');
-    cartSidebar.classList.toggle('open');
+    const cartSidebar = document.getElementById("cart-sidebar");
+    cartSidebar.classList.toggle("open");
 }
 
 function scrollToShop() {
-    document.getElementById('shop-section').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById("shop-section").scrollIntoView({ behavior: "smooth" });
 }
