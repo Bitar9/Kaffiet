@@ -1,60 +1,58 @@
-let cart = [];
-
-const products = [
-    { name: "Americano", price: 35, image: "/images/Americano.png" },
-    { name: "Cappuccino", price: 40, image: "/images/Cappuccino.png" },
-    { name: "Capri Sun", price: 20, image: "/images/capri_sun.png" },
-    { name: "Pepsi", price: 15, image: "/images/pepsi.png" },
-    { name: "Sandwich", price: 50, image: "/images/sandwich.png" }
+// Product Data
+const produkter = [
+    { namn: "Americano", pris: 35, bild: "/images/Americano.png", beskrivning: "En klassisk Americano för kaffeälskare." },
+    { namn: "Cappuccino", pris: 40, bild: "/images/Cappuccino.png", beskrivning: "Len och skummig Cappuccino." },
+    { namn: "Capri Sun", pris: 20, bild: "/images/capri_sun.png", beskrivning: "En fräsch Capri Sun att njuta av." },
+    { namn: "Pepsi", pris: 15, bild: "/images/pepsi.png", beskrivning: "Kyld och kolsyrad Pepsi för att släcka törsten." },
+    { namn: "Sandwich", pris: 50, bild: "/images/sandwich.png", beskrivning: "Färsk och läcker smörgås." }
+    // Lägg till fler produkter här (totalt upp till 15)
 ];
 
+// Rendera produkter i butiken
 document.addEventListener("DOMContentLoaded", () => {
-    renderProducts();
+    renderaProdukter();
 });
 
-function renderProducts() {
+function renderaProdukter() {
     const grid = document.getElementById("product-grid");
-    products.forEach(product => {
-        const card = document.createElement("div");
-        card.classList.add("product-card");
-        card.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
+    produkter.forEach(produkt => {
+        const kort = document.createElement("div");
+        kort.classList.add("product-card");
+        kort.innerHTML = `
+            <img src="${produkt.bild}" alt="${produkt.namn}">
             <div class="product-info">
-                <h3>${product.name}</h3>
-                <p>Price: ${product.price} kr</p>
-                <button class="add-to-cart-btn" onclick="addToCart('${product.name}')">Add to Cart</button>
+                <h3>${produkt.namn}</h3>
+                <p>Pris: ${produkt.pris} kr</p>
+                <button class="inspect-btn" onclick="inspekteraVara('${produkt.namn}')">Inspektera vara</button>
             </div>
         `;
-        grid.appendChild(card);
+        grid.appendChild(kort);
     });
 }
 
-function addToCart(productName) {
-    const product = products.find(p => p.name === productName);
-    cart.push(product);
-    updateCart();
-    toggleCart();
+// Inspektionsmodal
+function inspekteraVara(produktNamn) {
+    const produkt = produkter.find(p => p.namn === produktNamn);
+    const modal = document.getElementById("modal");
+    const modalBild = document.getElementById("modal-image");
+    const modalTitel = document.getElementById("modal-title");
+    const modalBeskrivning = document.getElementById("modal-description");
+    const modalPris = document.getElementById("modal-price");
+
+    modalBild.src = produkt.bild;
+    modalTitel.textContent = produkt.namn;
+    modalBeskrivning.textContent = produkt.beskrivning;
+    modalPris.textContent = produkt.pris;
+
+    modal.style.display = "flex";
 }
 
-function updateCart() {
-    const cartItems = document.getElementById("cart-items");
-    const cartTotal = document.getElementById("cart-total");
-    cartItems.innerHTML = "";
-    let total = 0;
-    cart.forEach(item => {
-        total += item.price;
-        const li = document.createElement("li");
-        li.textContent = `${item.name} - ${item.price} kr`;
-        cartItems.appendChild(li);
-    });
-    cartTotal.textContent = total;
+// Stäng modal
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
 }
 
-function toggleCart() {
-    const cartSidebar = document.getElementById("cart-sidebar");
-    cartSidebar.classList.toggle("open");
-}
-
+// Scrolla till butik
 function scrollToShop() {
     document.getElementById("shop-section").scrollIntoView({ behavior: "smooth" });
 }
