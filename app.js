@@ -3,7 +3,7 @@ let kundvagn = [];
 const produkter = [
     { namn: "Slat Bulle (utan smör , pålägg)", pris: 5, bild: "Slat-bulle.png" },
     { namn: "Hel Bulle med pålägg", pris: 10, bild: "Bulle.png" },
-    { namn: "Capri Sun", pris: 5, bild: "caprisun,png" },
+    { namn: "Capri Sun", pris: 5, bild: "caprisun.png" },
     { namn: "Billys Pan pizza Veggie", pris: 15, bild: "billy_veggie.png" },
     { namn: "Billys Pan pizza Original", pris: 15, bild: "billy_original.png" }
     { namn: "Glass", pris: 5, bild: "glass.png" }
