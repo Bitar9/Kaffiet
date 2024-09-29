@@ -1,68 +1,45 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vår Kafeteria - En Exklusiv Shoppingupplevelse</title>
-    <!-- External CSS for icons and fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Café Delight - Virtual Shop</title>
     <link rel="stylesheet" href="shop_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <script defer src="app.js"></script>
 </head>
 <body>
- 
-<!-- Header with fixed navbar -->
-<header class="header">
-    <nav class="navbar-container">
-        <div class="logo-container">
-            <img src="logo.png" alt="Kafeteria Logotyp" class="logo">
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1 class="hero-heading">Welcome to Café Delight</h1>
+            <p class="hero-subheading">Savor the flavor of premium drinks & snacks</p>
+            <button class="scroll-btn" onclick="scrollToShop()">Explore Menu</button>
         </div>
-        <ul class="nav-links">
-            <li><a href="#shop-section">Butik</a></li>
-            <li><a href="#contact-section">Kontakt</a></li>
-        </ul>
-        <div class="cart-icon" id="cart-toggle">
-            <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop-section" class="shop-section">
+        <h2 class="section-title">Our Specials</h2>
+        <div id="product-grid" class="product-grid"></div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart-btn" onclick="toggleCart()">Close</button>
         </div>
-    </nav>
-</header>
-
-<!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>Välkommen till vår Kafeteria</h1>
-        <p>Utforska våra utsökta kaffeblandningar och beställ med ett klick!</p>
-        <button onclick="scrollToShop()">Beställ Nu</button>
-    </div>
-</section>
-
-<!-- Product Section -->
-<section id="shop-section" class="product-section">
-    <div class="container">
-        <h2 class="section-title">Våra Produkter</h2>
-        <div class="product-grid" id="product-grid">
-            <!-- Dynamically Loaded Products -->
+        <ul id="cart-items"></ul>
+        <div class="cart-footer">
+            <p>Total: <span id="cart-total">0</span> kr</p>
+            <button class="checkout-btn">Proceed to Checkout</button>
         </div>
     </div>
-</section>
 
-<!-- Shopping Cart Sidebar -->
-<aside id="cart-sidebar" class="cart-sidebar">
-    <h2>Din Varukorg</h2>
-    <ul id="cart-items"></ul>
-    <div class="cart-total">
-        <p>Totalt: <span id="cart-total">0</span> kr</p>
-    </div>
-    <button class="checkout-btn">Till Kassan</button>
-    <button class="close-cart-btn" onclick="toggleCart()">Stäng</button>
-</aside>
-
-<!-- Footer Section -->
-<footer id="contact-section" class="footer">
-    <p>Kontakt: 1234-567-890 | E-post: info@kafeteria.com</p>
-</footer>
-
-<!-- Script for interactions -->
-<script src="app.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Café Delight. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
