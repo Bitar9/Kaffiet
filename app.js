@@ -4,7 +4,7 @@ const produkter = [
     { namn: "Slat Bulle (utan smör , pålägg)", pris: 5, bild: "Slat-bulle.png" },
     { namn: "Hel Bulle med pålägg", pris: 10, bild: "Bulle.png" },
     { namn: "Capri Sun", pris: 5, bild: "caprisun.png" },  // Fixed the filename
-    { namn: "Billys Pan pizza Veggie", pris: 15, bild: "billy_veggie.png" },
+    { namn: "Billys Pan pizza Veggie", pris: 15, bild: "billy_Veggie.png" },
     { namn: "Billys Pan pizza Original", pris: 15, bild: "billy_original.png" },
     { namn: "Glass", pris: 5, bild: "glass.png" },
     { namn: "Pancake med Sylt (1 st)", pris: 15, bild: "pancake.png" },
