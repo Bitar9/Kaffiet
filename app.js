@@ -1,14 +1,13 @@
-// Product Data
+let kundvagn = [];
+
 const produkter = [
-    { namn: "Americano", pris: 35, bild: "/images/Americano.png", beskrivning: "En klassisk Americano för kaffeälskare." },
-    { namn: "Cappuccino", pris: 40, bild: "/images/Cappuccino.png", beskrivning: "Len och skummig Cappuccino." },
-    { namn: "Capri Sun", pris: 20, bild: "/images/capri_sun.png", beskrivning: "En fräsch Capri Sun att njuta av." },
-    { namn: "Pepsi", pris: 15, bild: "/images/pepsi.png", beskrivning: "Kyld och kolsyrad Pepsi för att släcka törsten." },
-    { namn: "Sandwich", pris: 50, bild: "/images/sandwich.png", beskrivning: "Färsk och läcker smörgås." }
-    // Lägg till fler produkter här (totalt upp till 15)
+    { namn: "Americano", pris: 35, bild: "/images/Americano.png" },
+    { namn: "Cappuccino", pris: 40, bild: "/images/Cappuccino.png" },
+    { namn: "Capri Sun", pris: 20, bild: "/images/capri_sun.png" },
+    { namn: "Pepsi", pris: 15, bild: "/images/pepsi.png" },
+    { namn: "Sandwich", pris: 50, bild: "/images/sandwich.png" }
 ];
 
-// Rendera produkter i butiken
 document.addEventListener("DOMContentLoaded", () => {
     renderaProdukter();
 });
@@ -23,36 +22,39 @@ function renderaProdukter() {
             <div class="product-info">
                 <h3>${produkt.namn}</h3>
                 <p>Pris: ${produkt.pris} kr</p>
-                <button class="inspect-btn" onclick="inspekteraVara('${produkt.namn}')">Inspektera vara</button>
+                <button class="add-to-cart-btn" onclick="laggTillIKundvagn('${produkt.namn}')">Lägg till i kundvagn</button>
             </div>
         `;
         grid.appendChild(kort);
     });
 }
 
-// Inspektionsmodal
-function inspekteraVara(produktNamn) {
+function laggTillIKundvagn(produktNamn) {
     const produkt = produkter.find(p => p.namn === produktNamn);
-    const modal = document.getElementById("modal");
-    const modalBild = document.getElementById("modal-image");
-    const modalTitel = document.getElementById("modal-title");
-    const modalBeskrivning = document.getElementById("modal-description");
-    const modalPris = document.getElementById("modal-price");
-
-    modalBild.src = produkt.bild;
-    modalTitel.textContent = produkt.namn;
-    modalBeskrivning.textContent = produkt.beskrivning;
-    modalPris.textContent = produkt.pris;
-
-    modal.style.display = "flex";
+    kundvagn.push(produkt);
+    uppdateraKundvagn();
+    toggleCart();
 }
 
-// Stäng modal
-function closeModal() {
-    document.getElementById("modal").style.display = "none";
+function uppdateraKundvagn() {
+    const cartItems = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+    cartItems.innerHTML = "";
+    let total = 0;
+    kundvagn.forEach(item => {
+        total += item.pris;
+        const li = document.createElement("li");
+        li.textContent = `${item.namn} - ${item.pris} kr`;
+        cartItems.appendChild(li);
+    });
+    cartTotal.textContent = total;
 }
 
-// Scrolla till butik
+function toggleCart() {
+    const cartSidebar = document.getElementById("cart-sidebar");
+    cartSidebar.classList.toggle("open");
+}
+
 function scrollToShop() {
     document.getElementById("shop-section").scrollIntoView({ behavior: "smooth" });
 }
