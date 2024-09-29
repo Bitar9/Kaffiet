@@ -1,29 +1,33 @@
-// Sample Product Data
+let cart = [];
+
 const products = [
-    { name: "Cappuccino", price: 90, image: "coffee-1.jpg" },
-    { name: "Americano", price: 69, image: "coffee-2.jpg" },
-    { name: "Espresso", price: 49, image: "coffee-3.jpg" },
+    { name: "Espresso", price: 35, image: "espresso.jpg" },
+    { name: "Cappuccino", price: 40, image: "cappuccino.jpg" },
+    { name: "Latte", price: 45, image: "latte.jpg" },
+    { name: "Croissant", price: 25, image: "croissant.jpg" }
 ];
 
-// Load Products Dynamically
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", () => {
+    loadProducts();
+    document.getElementById('cart-toggle').addEventListener('click', toggleCart);
+});
+
+function loadProducts() {
     const productGrid = document.getElementById('product-grid');
     products.forEach(product => {
-        productGrid.innerHTML += `
-        <div class="product-card">
-            <img src="${product.image}" alt="${product.name}">
-            <div class="product-info">
-                <h3>${product.name}</h3>
-                <p class="price">${product.price} kr</p>
-                <button class="add-to-cart-btn" onclick="addToCart('${product.name}', ${product.price})">Add to Cart</button>
+        const productCard = `
+            <div class="product-card">
+                <img src="${product.image}" alt="${product.name}">
+                <div class="product-info">
+                    <h3>${product.name}</h3>
+                    <p class="price">${product.price} kr</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('${product.name}', ${product.price})">Lägg till i varukorg</button>
+                </div>
             </div>
-        </div>
         `;
+        productGrid.innerHTML += productCard;
     });
-};
-
-// Shopping Cart Functionality
-let cart = [];
+}
 
 function addToCart(name, price) {
     cart.push({ name, price });
@@ -44,4 +48,8 @@ function updateCart() {
 function toggleCart() {
     const cartSidebar = document.getElementById('cart-sidebar');
     cartSidebar.classList.toggle('open');
+}
+
+function scrollToShop() {
+    document.getElementById('shop-section').scrollIntoView({ behavior: 'smooth' });
 }
