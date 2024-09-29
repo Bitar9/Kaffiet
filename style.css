@@ -112,7 +112,7 @@ p{
     transition: all 0.5s;
 }
 
-.see-more-button {
+button.see-more-button {
     background-color: #ff5733; /* Change to a color that fits your theme */
     color: white;
     padding: 10px 20px;
@@ -123,9 +123,10 @@ p{
     transition: background-color 0.3s;
 }
 
-.see-more-button:hover {
+button.see-more-button:hover {
     background-color: #c0392b; /* Darker shade for hover effect */
 }
+
 
 .top-bar-img{
     position: absolute;
