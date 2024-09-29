@@ -1,45 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Café Delight - Virtual Shop</title>
+    <title>Café Delight - Virtuell Butik</title>
     <link rel="stylesheet" href="shop_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <script defer src="app.js"></script>
 </head>
 <body>
-    <!-- Hero Section -->
+    <!-- Hero-sektionen -->
     <section id="hero">
         <div class="hero-content">
-            <h1 class="hero-heading">Welcome to Café Delight</h1>
-            <p class="hero-subheading">Savor the flavor of premium drinks & snacks</p>
-            <button class="scroll-btn" onclick="scrollToShop()">Explore Menu</button>
+            <h1 class="hero-heading">Välkommen till Café Delight</h1>
+            <p class="hero-subheading">Upplev smaken av premiumdrycker & snacks</p>
+            <button class="scroll-btn" onclick="scrollToShop()">Utforska Menyn</button>
+            <a href="index.html" class="home-btn">Hem</a>
         </div>
     </section>
 
-    <!-- Shop Section -->
+    <!-- Butiksektion -->
     <section id="shop-section" class="shop-section">
-        <h2 class="section-title">Our Specials</h2>
+        <h2 class="section-title">Våra Specialiteter</h2>
         <div id="product-grid" class="product-grid"></div>
     </section>
 
-    <!-- Cart Sidebar -->
-    <div id="cart-sidebar" class="cart-sidebar">
-        <div class="cart-header">
-            <h3>Your Cart</h3>
-            <button class="close-cart-btn" onclick="toggleCart()">Close</button>
-        </div>
-        <ul id="cart-items"></ul>
-        <div class="cart-footer">
-            <p>Total: <span id="cart-total">0</span> kr</p>
-            <button class="checkout-btn">Proceed to Checkout</button>
+    <!-- Inspektionsmodal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal-btn" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Produktbild">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <p><strong>Pris:</strong> <span id="modal-price"></span> kr</p>
         </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>© 2024 Café Delight. All Rights Reserved.</p>
+        <p>© 2024 M-Kamel Albitar. Alla Rättigheter Reserverade.</p>
     </footer>
 </body>
 </html>
