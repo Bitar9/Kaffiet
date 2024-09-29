@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderaProdukter();
 });
 
-function renderaProdukter() {
+/* function renderaProdukter() {
     const grid = document.getElementById("product-grid");
     produkter.forEach(produkt => {
         const kort = document.createElement("div");
@@ -26,12 +26,13 @@ function renderaProdukter() {
             <div class="product-info">
                 <h3>${produkt.namn}</h3>
                 <p>Pris: ${produkt.pris} kr</p>
-                <button class="add-to-cart-btn" onclick="laggTillIKundvagn('${produkt.namn}')">Lägg till i kundvagn</button>
+              <button class="add-to-cart-btn" onclick="laggTillIKundvagn('${produkt.namn}')">Lägg till i kundvagn</button>
             </div>
         `;
         grid.appendChild(kort);
     });
 }
+*/
 /*
 /function laggTillIKundvagn(produktNamn) {
     const produkt = produkter.find(p => p.namn === produktNamn);
