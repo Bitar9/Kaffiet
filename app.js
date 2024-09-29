@@ -1,11 +1,15 @@
 let kundvagn = [];
 
 const produkter = [
-    { namn: "Americano", pris: 35, bild: "/images/Americano.png" },
-    { namn: "Cappuccino", pris: 40, bild: "/images/Cappuccino.png" },
-    { namn: "Capri Sun", pris: 20, bild: "/images/capri_sun.png" },
-    { namn: "Pepsi", pris: 15, bild: "/images/pepsi.png" },
-    { namn: "Sandwich", pris: 50, bild: "/images/sandwich.png" }
+    { namn: "Slat Bulle (utan smör , pålägg)", pris: 5, bild: "Slat-bulle.png" },
+    { namn: "Hel Bulle med pålägg", pris: 10, bild: "Bulle.png" },
+    { namn: "Capri Sun", pris: 5, bild: "caprisun,png" },
+    { namn: "Billys Pan pizza Veggie", pris: 15, bild: "billy_veggie.png" },
+    { namn: "Billys Pan pizza Original", pris: 15, bild: "billy_original.png" }
+    { namn: "Glass", pris: 5, bild: "glass.png" }
+    { namn: "Pancake med Sylt (1 st)", pris: 15, bild: "pancake.png" }
+    { namn: "Popcorn", pris: 5, bild: "popcorn.png" }
+   
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
