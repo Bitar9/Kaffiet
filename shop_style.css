@@ -41,6 +41,21 @@ img {
     animation: fadeInHero 2s ease;
 }
 
+.home-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #ff6b35;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.home-btn:hover {
+    background-color: #cf6317;
+}
+
 .hero-heading {
     font-size: 4rem;
     font-weight: 700;
