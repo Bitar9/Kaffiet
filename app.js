@@ -32,15 +32,15 @@ function renderaProdukter() {
         grid.appendChild(kort);
     });
 }
-
-function laggTillIKundvagn(produktNamn) {
+/*
+/function laggTillIKundvagn(produktNamn) {
     const produkt = produkter.find(p => p.namn === produktNamn);
     kundvagn.push(produkt);
     uppdateraKundvagn();
     toggleCart();
 }
 
-function uppdateraKundvagn() {
+// function uppdateraKundvagn() {
     const cartItems = document.getElementById("cart-items");
     const cartTotal = document.getElementById("cart-total");
     cartItems.innerHTML = "";
@@ -58,7 +58,7 @@ function toggleCart() {
     const cartSidebar = document.getElementById("cart-sidebar");
     cartSidebar.classList.toggle("open");
 }
-
+*/
 function scrollToShop() {
     document.getElementById("shop-section").scrollIntoView({ behavior: "smooth" });
 }
