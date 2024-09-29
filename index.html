@@ -19,7 +19,7 @@
             <div class="header-section__top-bar responsive-container">
                 <ul class="header-section__top-bar-text">
                     <li>
-                        <p>Mån-Fre: 8:00 till 14:00</p>
+                        <p>Mån-Fre: 10:00 till 14:00</p>
                     </li>
                     <li>
                         <p>Lör-Sön: 11:00 till 16:00</p>
@@ -73,23 +73,30 @@
                 <h2 class="section-3__h2 black-clr text-center">Vilka Kaffeerbjudanden Har Vi För Dig</h2>
                 <p class="section-3__p black-clr text-center">Vi som älskar miljövänliga system.</p>
                 <div class="section-3__card-main-div">
-                    <!-- Add Coffee Items Here -->
+                    <!-- Coffee Items -->
                     <div class="section-3__card black-clr">
                         <div class="section-3__coffee-descp">
-                            <h3>Cappuccino</h3>
-                            <p>90 kr</p>
+                            <h3>Slat Bulle (utan smör, pålägg)</h3>
+                            <p>5 kr</p>
                         </div>
-                        <p>Krämig espresso toppad med skummad mjölk, serveras varm i kopp.</p>
+                        <p>En läcker slat bulle utan smör, perfekt för en snabb snack.</p>
                     </div>
                     <div class="section-3__card black-clr">
                         <div class="section-3__coffee-descp">
-                            <h3>Americano</h3>
-                            <p>69 kr</p>
+                            <h3>Hel Bulle med pålägg</h3>
+                            <p>10 kr</p>
                         </div>
-                        <p>Stark espresso utspädd med hett vatten, levererar en djärv smakprofil.</p>
+                        <p>En fullständig bulle med ditt val av pålägg, smaklig och tillfredsställande.</p>
                     </div>
-                    <!-- More Coffee Items -->
+                    <div class="section-3__card black-clr">
+                        <div class="section-3__coffee-descp">
+                            <h3>Capri Sun</h3>
+                            <p>5 kr</p>
+                        </div>
+                        <p>En uppfriskande fruktdryck för att släcka törsten.</p>
+                    </div>
                 </div>
+                <button class="see-more-button" onclick="location.href='virtual_shop.html'">SE MER</button>
             </section>
         </main>
 
@@ -113,8 +120,8 @@
 
         // Simple function to add more coffee items dynamically
         function addCoffeeItem(name, price, description) {
-            const coffeeCard = `
-                <div class="section-3__card black-clr">
+            const coffeeCard = 
+                `<div class="section-3__card black-clr">
                     <div class="section-3__coffee-descp">
                         <h3>${name}</h3>
                         <p>${price} kr</p>
