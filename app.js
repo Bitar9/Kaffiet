@@ -8,7 +8,9 @@ const produkter = [
     { namn: "Billys Pan pizza Original", pris: 15, bild: "billy_original.png" },
     { namn: "Glass", pris: 5, bild: "glass.png" },
     { namn: "Pancake med Sylt (1 st)", pris: 15, bild: "pancake.png" },
-    { namn: "Popcorn", pris: 5, bild: "popcorn.png" }
+    { namn: "Popcorn", pris: 5, bild: "popcorn.png" },
+    { namn: "Snabbnudlar", pris: 10, bild: "nudlar.png" }
+
     // Added missing commas between the objects
 ];
 
