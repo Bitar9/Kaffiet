@@ -83,6 +83,24 @@ img {
     background-color: #cf6317;
 }
 
+.view-menu-btn {
+    background-color: #FF6347; /* Tomato color to stand out */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* Spacing from the product grid or footer */
+    display: inline-block;
+}
+
+.view-menu-btn:hover {
+    background-color: #FF4500; /* Darker shade on hover */
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
